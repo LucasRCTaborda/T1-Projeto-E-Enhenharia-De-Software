@@ -10,3 +10,9 @@ INSERT INTO Usuario (codigo, usuario, senha) VALUES
                                                (9, 'Fernanda', 'senha8'),
                                                (10, 'Rafael', 'senha9'),
                                                (11, 'Mariana', 'senha10');
+
+
+INSERT INTO aplicativo (ID, nome) VALUES
+                                                   (1, 'Aplicativo A'),
+                                                   (2, 'Aplicativo B'),
+                                                   (3, 'Aplicativo C');

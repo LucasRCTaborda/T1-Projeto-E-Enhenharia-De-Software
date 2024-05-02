@@ -1,14 +1,15 @@
 package com.bcopstein.sistvendas.persistencia;
 
-
 import com.bcopstein.sistvendas.dominio.modelos.AplicativoModel;
 import com.bcopstein.sistvendas.dominio.persistencia.IAplicativoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Repository;
 
 import java.util.LinkedList;
 import java.util.List;
 
+@Primary
 @Repository
 public class AplicativoRepJpa implements IAplicativoRepository {
     private final AplicativoJpa_itfRep aplicativoRepository;
@@ -22,10 +23,10 @@ public class AplicativoRepJpa implements IAplicativoRepository {
     public List<AplicativoModel> todos() {
         List<Aplicativo> aplicativos = aplicativoRepository.findAll();
         if (aplicativos.size() == 0) {
-            return new LinkedList<AplicativoModel>();
+            return new LinkedList<>();
         } else {
             return aplicativos.stream()
-                    .map(prod -> Aplicativo.toAplicativoModel(prod))
+                    .map(Aplicativo::toAplicativoModel)
                     .toList();
         }
     }
@@ -33,7 +34,7 @@ public class AplicativoRepJpa implements IAplicativoRepository {
     @Override
     public AplicativoModel consultaPorId(long id) {
         Aplicativo aplicativo = aplicativoRepository.findById(id);
-        System.out.println("Produto de codigo: "+id+": "+aplicativo);
+        System.out.println("Produto de código: " + id + ": " + aplicativo);
         if (aplicativo == null) {
             return null;
         } else {
@@ -51,8 +52,3 @@ public class AplicativoRepJpa implements IAplicativoRepository {
         return null;
     }
 }
-
-
-
-
-
