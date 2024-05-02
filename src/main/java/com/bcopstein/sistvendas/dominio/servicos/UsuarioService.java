@@ -17,9 +17,6 @@ public record UsuarioService(IUsuarioRepository iUsuarioRepository) {
     }
 
 
-  
-
-
     public List<UsuarioModel> findAll() {
        return iUsuarioRepository.todos();
     }
