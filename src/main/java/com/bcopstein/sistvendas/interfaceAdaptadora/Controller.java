@@ -53,7 +53,6 @@ public List<AplicativoTDO> buscaAplicativos() {
 
 
 
-
     // Endpoint para atualizar o custo mensal do aplicativo
     @PostMapping("/atualizar-custo-aplicativo")
     public String atualizarCustoAplicativo(@RequestParam("custo") double custo) {

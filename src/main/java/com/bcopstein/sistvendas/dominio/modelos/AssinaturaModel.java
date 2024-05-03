@@ -28,7 +28,7 @@ public class AssinaturaModel {
     }
 
 
-    public AssinaturaModel(long codigo, String nome, String s, Date inicioVigencia, Date fimVigencia) {
+    public AssinaturaModel(long codigo, long nome, Long s, Date inicioVigencia, Date fimVigencia) {
         this.codigo = codigo;
       this.aplicativo = new LinkedList<>();
         this.cliente = new LinkedList<>();
@@ -71,4 +71,6 @@ public class AssinaturaModel {
                 ", aplicativo=" + aplicativo +
                 '}';
     }
+
+
 }

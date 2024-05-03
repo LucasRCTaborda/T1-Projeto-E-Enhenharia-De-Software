@@ -2,11 +2,9 @@ package com.bcopstein.sistvendas.persistencia;
 
 import com.bcopstein.sistvendas.dominio.modelos.AplicativoModel;
 import com.bcopstein.sistvendas.dominio.modelos.AssinaturaModel;
-import com.bcopstein.sistvendas.dominio.modelos.ClienteModel;
 import com.bcopstein.sistvendas.dominio.persistencia.IAssinaturaRepository;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class AssinaturaRepJpa implements IAssinaturaRepository {
@@ -16,18 +14,18 @@ public class AssinaturaRepJpa implements IAssinaturaRepository {
         this.assinaturas = assinaturas;
     }
 
-/*    @Override
+   @Override
     public List<AssinaturaModel> todosAssinatura() {
         return assinaturas;
     }
 
     @Override
-    public List<AplicativoModel> todosAplicativos() {
+    public List<List<AplicativoModel>> todosAplicativos() {
         return assinaturas.stream()
                 .map(AssinaturaModel::getAplicativo)
-                .collect(Collectors.toList());
+                .collect(Collectors.toList()).reversed();
     }
-
+/*
     @Override
     public List<ClienteModel> todosClientes() {
         return assinaturas.stream()

@@ -8,8 +8,7 @@ public class AplicativoTDO {
     private String nome;
     private double custoMensal;
 
-    public AplicativoTDO() {
-    }
+
 
     public AplicativoTDO(long codigo, String nome, double custoMensal) {
         this.codigo = codigo;
