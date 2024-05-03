@@ -12,21 +12,21 @@ public class Cliente {
 
     @Id
     @GeneratedValue
-    private long codigo;
+    private long ID;
     private String nome;
     private String Email;
 
     public Cliente() {
     }
 
-    public Cliente(long codigo, String nome, String email) {
-        this.codigo = codigo;
+    public Cliente(long ID, String nome, String email) {
+        this.ID = ID;
         this.nome = nome;
         Email = email;
     }
 
     public long getcodigo() {
-        return codigo;
+        return ID;
     }
 
     public String getNome() {

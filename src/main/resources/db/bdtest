@@ -1,0 +1,44 @@
+
+INSERT INTO Cliente (ID, nome, email) VALUES
+                                               (1, 'Empresa A', 'empresa_a@example.com'),
+                                               (2, 'Empresa B', 'empresa_b@example.com'),
+                                               (3, 'Empresa C', 'empresa_c@example.com'),
+                                               (4, 'Empresa D', 'empresa_d@example.com'),
+                                               (5, 'Empresa E', 'empresa_e@example.com'),
+                                               (6, 'Empresa F', 'empresa_f@example.com'),
+                                               (7, 'Empresa G', 'empresa_g@example.com'),
+                                               (8, 'Empresa H', 'empresa_h@example.com'),
+                                               (9, 'Empresa I', 'empresa_i@example.com'),
+                                               (10, 'Empresa J', 'empresa_j@example.com');
+
+INSERT INTO Assinatura (codigo, inicio_vigencia, fim_vigencia, aplicativo_id, cliente_id)
+VALUES
+    (1, '2024-05-01', '2024-06-01', 1, 1),
+    (2, '2024-05-01', '2024-06-01', 1, 2),
+    (3, '2024-05-01', '2024-06-01', 1, 3),
+    (4, '2024-05-01', '2024-06-01', 1, 4),
+    (5, '2024-05-01', '2024-06-01', 1, 5),
+    (6, '2024-05-01', '2024-06-01', 1, 6),
+    (7, '2024-05-01', '2024-06-01', 1, 7),
+    (8, '2024-05-01', '2024-06-01', 1, 8),
+    (9, '2024-05-01', '2024-06-01', 1, 9),
+    (10, '2024-05-01', '2024-06-01', 1, 10);
+
+
+INSERT INTO aplicativo (ID, nome, custo_mensal) VALUES (2, 'Aplicativo X', 5.0);
+
+
+INSERT INTO Pagamento (codigo, assinatura_codigo, valor_pago, promocao)
+VALUES
+    (2, 2, 60.00, 'Promoção 2'),
+    (3, 3, 70.00, 'Promoção 3'),
+    (4, 4, 80.00, 'Promoção 4'),
+    (5, 5, 90.00, 'Promoção 5'),
+    (6, 6, 100.00, 'Promoção 6'),
+    (7, 7, 110.00, 'Promoção 7'),
+    (8, 8, 120.00, 'Promoção 8'),
+    (9, 9, 130.00, 'Promoção 9'),
+    (10, 10, 140.00, 'Promoção 10');
+
+
+

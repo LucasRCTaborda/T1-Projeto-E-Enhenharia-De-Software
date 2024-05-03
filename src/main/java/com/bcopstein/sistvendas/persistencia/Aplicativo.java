@@ -13,15 +13,16 @@ public class Aplicativo {
     @Column(name = "nome", nullable = false)
     private String nome;
 
-
+    @Column(name = "custoMensal", nullable = false)
+    private double custo_mensal;
 
     public Aplicativo() {
     }
 
-    public Aplicativo(Long codigo, String nome) {
+    public Aplicativo(Long codigo, String nome, double custo_mensal) {
         this.ID = codigo;
         this.nome = nome;
-
+        this.custo_mensal = custo_mensal;
     }
 
     public Long getCodigo() {
@@ -40,12 +41,19 @@ public class Aplicativo {
         this.nome = nome;
     }
 
+    public double getCusto_mensal() {
+        return custo_mensal;
+    }
+
+    public void setCusto_mensal(double custoMensal) {
+        this.custo_mensal = custoMensal;
+    }
 
     public static Aplicativo fromAplicativoModel(AplicativoModel apModel) {
-        return new Aplicativo(apModel.getCodigo(), apModel.getNome() );
+        return new Aplicativo(apModel.getCodigo(), apModel.getNome(), apModel.getCustoMensal());
     }
 
     public static AplicativoModel toAplicativoModel(Aplicativo aplicativo) {
-        return new AplicativoModel(aplicativo.getCodigo(), aplicativo.getNome());
+        return new AplicativoModel(aplicativo.getCodigo(), aplicativo.getNome(), aplicativo.getCusto_mensal());
     }
 }
