@@ -4,8 +4,9 @@ import com.bcopstein.sistvendas.dominio.modelos.AplicativoModel;
 import com.bcopstein.sistvendas.dominio.modelos.AssinaturaModel;
 import com.bcopstein.sistvendas.dominio.persistencia.IAssinaturaRepository;
 
+import java.util.LinkedList;
 import java.util.List;
-import java.util.stream.Collectors;
+import java.util.Optional;
 
 public class AssinaturaRepJpa implements IAssinaturaRepository {
     private List<AssinaturaModel> assinaturas;
@@ -15,16 +16,17 @@ public class AssinaturaRepJpa implements IAssinaturaRepository {
     }
 
    @Override
-    public List<AssinaturaModel> todosAssinatura() {
-        return assinaturas;
+    public Optional<AssinaturaModel> todosAssinatura() {
+        return assinaturas.stream().findFirst();
     }
 
     @Override
     public List<List<AplicativoModel>> todosAplicativos() {
-        return assinaturas.stream()
-                .map(AssinaturaModel::getAplicativo)
-                .collect(Collectors.toList()).reversed();
-    }
+    AssinaturaRepJpa jpa=null;
+
+    return jpa.todosAplicativos();
+            }
+        }
 /*
     @Override
     public List<ClienteModel> todosClientes() {
@@ -53,4 +55,4 @@ public class AssinaturaRepJpa implements IAssinaturaRepository {
                 .findFirst()
                 .orElse(null);
     }*/
-}
+

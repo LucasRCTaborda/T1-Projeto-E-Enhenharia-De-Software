@@ -22,6 +22,7 @@ public class AplicativoRepJpa implements IAplicativoRepository {
     @Override
     public List<AplicativoModel> todos() {
         List<Aplicativo> aplicativos = aplicativoRepository.findAll();
+
         if (aplicativos.size() == 0) {
             return new LinkedList<>();
         } else {

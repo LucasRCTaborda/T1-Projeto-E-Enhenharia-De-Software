@@ -1,6 +1,8 @@
 package com.bcopstein.sistvendas.persistencia;
 
 
+import com.bcopstein.sistvendas.dominio.modelos.AplicativoModel;
+import com.bcopstein.sistvendas.dominio.modelos.ClienteModel;
 import com.bcopstein.sistvendas.dominio.modelos.StatusATIVO;
 import jakarta.persistence.*;
 
@@ -78,5 +80,13 @@ public class Assinatura {
 
     public void setFim_vigencia(Date fimVigencia) {
         this.fim_vigencia = fimVigencia;
+    }
+
+    public static Cliente fromClienteModel(ClienteModel cModel){
+        return new Cliente(cModel.getcodigo(),cModel.getNome(),cModel.getEmail());
+    }
+
+    public static Aplicativo fromAplicativoModel(AplicativoModel apModel) {
+        return new Aplicativo(apModel.getCodigo(), apModel.getNome(), apModel.getCustoMensal());
     }
 }
