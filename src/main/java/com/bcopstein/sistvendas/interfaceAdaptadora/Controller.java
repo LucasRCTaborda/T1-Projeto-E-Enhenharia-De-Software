@@ -30,9 +30,24 @@ public class Controller {
         return msg;
     }
 
-
+/*   Lista com todos os clientes cadastrador*/
     @RequestMapping(value = "/usuarios") // Corrigindo a sintaxe da anotação RequestMapping
     public List<UsuarioTDO> buscaUsuarios() {
-
 return userUC.run();}
 }
+/* aplicativos cadastrados*/
+
+
+/*post crie assinatura , retorna  */
+
+
+/* atualiza o custo mensal do aplicativo post (custo) retorna cadastro completo dos aplicativos */
+
+/*get crie um filtro que repassa todos os cadastro  e sub cadastros tipos ativos e tipos cancelados*/
+
+
+/* get passa o (codigo do cliente ) e retorna o retorna as assinaturas do cliente e se estao ativas e canceladas */
+
+/*      post faz pagamento  marca o (datatime) , (long codigo do cliente), ( valor pago e a data incicada)*/
+
+/* assinaturas permanecentes ativas , (cod assinatura)*/
