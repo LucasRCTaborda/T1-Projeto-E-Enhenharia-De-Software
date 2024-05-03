@@ -23,3 +23,15 @@ INSERT INTO aplicativo (ID, nome) VALUES
                                       (11, 'Aplicativo K'),
                                       (12, 'Aplicativo L'),
                                       (13, 'Aplicativo M');
+
+INSERT INTO Cliente (codigo, nome, email) VALUES
+                                               (1, 'Empresa A', 'empresa_a@example.com'),
+                                               (2, 'Empresa B', 'empresa_b@example.com'),
+                                               (3, 'Empresa C', 'empresa_c@example.com'),
+                                               (4, 'Empresa D', 'empresa_d@example.com'),
+                                               (5, 'Empresa E', 'empresa_e@example.com'),
+                                               (6, 'Empresa F', 'empresa_f@example.com'),
+                                               (7, 'Empresa G', 'empresa_g@example.com'),
+                                               (8, 'Empresa H', 'empresa_h@example.com'),
+                                               (9, 'Empresa I', 'empresa_i@example.com'),
+                                               (10, 'Empresa J', 'empresa_j@example.com');
