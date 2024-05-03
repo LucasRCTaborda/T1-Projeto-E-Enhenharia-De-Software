@@ -39,4 +39,16 @@ public class CriaAssinaturaUC {
             return AssinaturaDTO.fromModel(assinatura);
         }
 
+    @Override
+    public String toString() {
+        return "CriaAssinaturaUC{" +
+                "codigo=" + ass.getCodigo() +
+                ", cliente=" + ass.getCliente() +
+                ", aplicativo=" + ass.getAplicativo() +
+                ", inicioVigencia=" + ass.getInicioVigencia() +
+                ", fimVigencia=" + ass.getFimVigencia() +
+                ", statusATIVO=" + ass.getStatusATIVO() +
+                '}';
+    }
+
 }

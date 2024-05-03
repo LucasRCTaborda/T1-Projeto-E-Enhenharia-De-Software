@@ -1,9 +1,12 @@
 package com.bcopstein.sistvendas.interfaceAdaptadora;
 
 import com.bcopstein.sistvendas.aplicacao.casosDeUso.BuscaUsuarariosUC;
+import com.bcopstein.sistvendas.aplicacao.casosDeUso.CriaAssinaturaUC;
 import com.bcopstein.sistvendas.aplicacao.casosDeUso.ListaAplicativosUC;
 import com.bcopstein.sistvendas.aplicacao.dtos.AplicativoTDO;
+import com.bcopstein.sistvendas.aplicacao.dtos.AssinaturaDTO;
 import com.bcopstein.sistvendas.aplicacao.dtos.UsuarioTDO;
+import com.bcopstein.sistvendas.dominio.modelos.AssinaturaModel;
 import com.bcopstein.sistvendas.persistencia.UsuarioJpa_itfRep;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -15,12 +18,14 @@ public class Controller {
     UsuarioJpa_itfRep jpaUser = null ;
     private BuscaUsuarariosUC userUC;
     private ListaAplicativosUC aplicativoUC ;
+    private CriaAssinaturaUC assinaturaUC;
 
 
     @Autowired
-    public Controller(BuscaUsuarariosUC userUC, ListaAplicativosUC aplicativoUC) {
+    public Controller(BuscaUsuarariosUC userUC, ListaAplicativosUC aplicativoUC,CriaAssinaturaUC assinaturaUC) {
         this.userUC = userUC;
         this.aplicativoUC=aplicativoUC;
+        this.assinaturaUC=assinaturaUC;
     }
 
     @RequestMapping("/Controller")
@@ -44,12 +49,16 @@ public List<AplicativoTDO> buscaAplicativos() {
 
 
 
+
     // Endpoint para criar uma assinatura
-    @PostMapping("/assinatura")
+    @PostMapping("/Assinatura")
     public String criarAssinatura() {
-        // Implemente a lógica para criar uma assinatura
-        return "Assinatura criada com sucesso";
+        long idCliente = 1;
+        long idAplicativo = 2;
+        AssinaturaDTO ass = assinaturaUC.run(idCliente, idAplicativo);
+        return ass.toString();
     }
+
 
 
 
